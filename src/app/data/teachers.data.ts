@@ -1,7 +1,7 @@
 import { Subject } from './subjects.data';
 import { SubjectTable } from './subjects.data';
 
-enum Position {
+export enum Position {
   ASSOCIATE_PROFESSOR = 'Associate Professor',
   ASSISTANT_PROFESSOR = 'Assistant Professor',
   MASTER_TEACHER = 'Master Teacher',
