@@ -4,14 +4,9 @@ import { EMPTY } from 'rxjs';
 import { map, mergeMap, catchError, switchMap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { concatLatestFrom } from '@ngrx/effects';
-import {
-  TeacherActionTypes,
-  teacherCreatedAction,
-  teachersLoadedAction,
-} from './teachers.actions';
-import { TeachersService } from '../teachers.service';
 import { selectNextTeacherId } from './teachers.selectors';
 import { TeacherModel } from './teachers.model';
+import { teachersLoadedAction } from './teachers.actions';
 
 @Injectable()
 export class TeacherEffects {
