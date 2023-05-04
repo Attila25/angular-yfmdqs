@@ -21,7 +21,7 @@ export interface Student {
 }
 
 export class StudentTable {
-  private static _students: Student[] = [
+  public static _students: Student[] = [
     {
       id: 1,
       neptun: 'GGG777',

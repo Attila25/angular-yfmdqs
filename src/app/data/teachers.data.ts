@@ -22,7 +22,7 @@ export interface Teacher {
 }
 
 export class TeacherTable {
-  private static _teachers: Teacher[] = [
+  public static _teachers: Teacher[] = [
     {
       id: 1,
       neptun: 'AAA111',

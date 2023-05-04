@@ -7,7 +7,7 @@ export interface Semester {
 }
 
 export class SemesterTable {
-  private static _semester: Semester[] = [
+  public static _semester: Semester[] = [
     {
       id: 1,
       name: '2020/2021/1',

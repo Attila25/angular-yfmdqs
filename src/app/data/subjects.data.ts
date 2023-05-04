@@ -1,6 +1,6 @@
-import { Semester } from './semesters.data';
-import { Student } from './students.data';
-import { Teacher } from './teachers.data';
+import { Semester, SemesterTable } from './semesters.data';
+import { Student, StudentTable } from './students.data';
+import { Teacher, TeacherTable } from './teachers.data';
 
 export interface Subject {
   id: number;
@@ -63,13 +63,28 @@ export class SubjectTable {
     },
   ];
 
-  public static teachers: Teacher[] = TeacherTable._teachers.map((teacher) => {
-    teacher.subjectId.forEach((x) => {
-      const subject = SubjectTable._subjects.find(
-        (a) => a.id === teacher.subjectId[x]
+  public static subjects: Subject[] = SubjectTable._subjects.map((subject) => {
+    subject.teacherId.forEach((x) => {
+      const teacher = TeacherTable._teachers.find(
+        (a) => a.id === subject.teacherId[x]
       );
-      if (subject != undefined) teacher.subjects.push(subject);
+      if (teacher != undefined) subject.teachers.push(teacher);
     });
-    return teacher;
+
+    subject.studentId.forEach((x) => {
+      const student = StudentTable._students.find(
+        (a) => a.id === subject.studentId[x]
+      );
+      if (student != undefined) subject.students.push(student);
+    });
+
+    subject.semesterId.forEach((x) => {
+      const semester = SemesterTable._semester.find(
+        (a) => a.id === subject.semesterId[x]
+      );
+      if (semester != undefined) subject.semesters.push(semester);
+    });
+
+    return subject;
   });
 }
