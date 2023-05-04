@@ -12,31 +12,33 @@ import { StoreModule } from '@ngrx/store';
 
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
-import * as fromBooks from './store/teachers.reducer';
-import { BookEffects } from './store/books.effects';
-import { BooksCreateComponent } from './books-create/books-create.component';
 import { TeachersRoutingModule } from './teachers-routing.module';
 import { TeachersComponent } from './teachers/teachers.component';
-import { TeachersListComponent } from './teachers-list/teachers-list/teachers-list.component';
+import { TeachersListComponent } from './teachers-list/teachers-list.component';
 import { TeachersService } from './teachers.service';
+import { TeacherEffects } from '../store/teachers.effects';
+import * as fromBooks from '../store/teachers.reducer';
 
 @NgModule({
   imports: [
-    CommonModule, TeachersRoutingModule, FormsModule, ReactiveFormsModule, RouterModule,
+    CommonModule,
+    TeachersRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
     MatInputModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    StoreModule.forFeature(fromBooks.booksFeatureKey, fromBooks.booksReducer),
-    EffectsModule.forFeature([BookEffects]),
+    StoreModule.forFeature(
+      fromBooks.teachersFeatureKey,
+      fromBooks.teachersReducer
+    ),
+    EffectsModule.forFeature([TeacherEffects]),
   ],
-  declarations: [
-    TeachersComponent, TeachersListComponent, BooksCreateComponent
-  ],
-  providers: [
-    TeachersService
-  ]
+  declarations: [TeachersComponent, TeachersListComponent],
+  providers: [TeachersService],
 })
-export class TeachersModule { }
+export class TeachersModule {}
