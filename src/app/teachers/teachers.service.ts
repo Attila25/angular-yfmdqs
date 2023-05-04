@@ -4,7 +4,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { RequestService } from 'src/app/request.service';
 import { Teacher } from 'src/app/data/teachers.data';
-import { TeacherModel } from '../store/teachers.model';
+import { TeacherModel } from './store/teachers.model';
 
 const TEACHER_URL = 'api/teachers';
 
