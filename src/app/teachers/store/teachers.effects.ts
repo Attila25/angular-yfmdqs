@@ -9,7 +9,7 @@ import {
   teacherCreatedAction,
   teachersLoadedAction,
 } from './teachers.actions';
-import { TeachersService } from '../teachers/teachers.service';
+import { TeachersService } from '../teachers.service';
 import { selectNextTeacherId } from './teachers.selectors';
 import { TeacherModel } from './teachers.model';
 
