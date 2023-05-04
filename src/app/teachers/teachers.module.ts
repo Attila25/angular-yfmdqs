@@ -16,8 +16,8 @@ import { TeachersRoutingModule } from './teachers-routing.module';
 import { TeachersService } from './teachers.service';
 import { TeacherEffects } from './store/teachers.effects';
 import * as fromBooks from './store/teachers.reducer';
-import { TeachersListComponent } from './teachers/teachers-list/teachers-list.component';
-import { TeachersComponent } from './teachers/teachers/teachers.component';
+import { TeachersListComponent } from './teachers-list/teachers-list.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 @NgModule({
   imports: [

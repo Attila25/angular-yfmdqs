@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { TeachersService } from '../teachers.service';
-import { selectTeachers } from '../../store/teachers.selectors';
-import { teachersRequestedAction } from '../../store/teachers.actions';
-import { TeacherModel } from '../../store/teachers.model';
+import { selectTeachers } from '../store/teachers.selectors';
+import { teachersRequestedAction } from '../store/teachers.actions';
+import { TeacherModel } from '../store/teachers.model';
 
 @Component({
   selector: 'app-teachers-list',
