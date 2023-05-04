@@ -8,7 +8,7 @@ export class InMemoryEventService implements InMemoryDbService {
 
   createDb() {
     const db = {
-      teachers: TeacherTable._teachers,
+      teachers: TeacherTable.teachers,
     };
     return db;
   }

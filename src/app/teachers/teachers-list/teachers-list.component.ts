@@ -6,7 +6,6 @@ import { selectTeachers } from '../store/teachers.selectors';
 import { teachersRequestedAction } from '../store/teachers.actions';
 import { TeacherModel } from '../store/teachers.model';
 
-
 @Component({
   selector: 'app-teachers-list',
   templateUrl: './teachers-list.component.html',
@@ -24,9 +23,7 @@ export class TeachersListComponent implements OnInit {
     'deleted',
   ];
 
-  teachers$: Observable<TeacherModel[]> = this.store.pipe(
-    select(selectTeachers)
-  );
+  teachers$: Observable<any> = this.store.pipe(select(selectTeachers));
 
   constructor(private teachersService: TeachersService, private store: Store) {}
 

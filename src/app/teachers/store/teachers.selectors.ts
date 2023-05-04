@@ -3,7 +3,10 @@ import { AppState } from '../../app.module';
 import { TeacherModel } from './teachers.model';
 import { TeachersFeatureState, teachersFeatureKey } from './teachers.reducer';
 
-export const selectFeature = createFeatureSelector<AppState, TeachersFeatureState>(teachersFeatureKey);
+export const selectFeature = createFeatureSelector<
+  AppState,
+  TeachersFeatureState
+>(teachersFeatureKey);
 
 export const selectTeachers = createSelector(
   selectFeature,
