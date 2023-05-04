@@ -62,4 +62,14 @@ export class SubjectTable {
       deleted: false,
     },
   ];
+
+  public static teachers: Teacher[] = TeacherTable._teachers.map((teacher) => {
+    teacher.subjectId.forEach((x) => {
+      const subject = SubjectTable._subjects.find(
+        (a) => a.id === teacher.subjectId[x]
+      );
+      if (subject != undefined) teacher.subjects.push(subject);
+    });
+    return teacher;
+  });
 }
