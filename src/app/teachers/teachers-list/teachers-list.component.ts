@@ -23,7 +23,9 @@ export class TeachersListComponent implements OnInit {
     'deleted',
   ];
 
-  teachers$: Observable<any> = this.store.pipe(select(selectTeachers));
+  teachers$: Observable<TeacherModel[]> = this.store.pipe(
+    select(selectTeachers)
+  );
 
   constructor(private teachersService: TeachersService, private store: Store) {}
 
