@@ -6,9 +6,7 @@ const routes: Routes = [
   {
     path: 'teachers',
     loadChildren: () =>
-      import('./teachers/teachers/teachers.module').then(
-        (m) => m.TeachersModule
-      ),
+      import('./teachers/teachers.module').then((m) => m.TeachersModule),
     canLoad: [AuthGuard],
   },
   {

@@ -6,6 +6,7 @@ import { selectTeachers } from '../store/teachers.selectors';
 import { teachersRequestedAction } from '../store/teachers.actions';
 import { TeacherModel } from '../store/teachers.model';
 
+
 @Component({
   selector: 'app-teachers-list',
   templateUrl: './teachers-list.component.html',

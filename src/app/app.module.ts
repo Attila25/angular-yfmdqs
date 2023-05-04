@@ -26,7 +26,7 @@ import { environment } from 'src/enviroments/enviroment';
 import { httpInterceptorProviders } from './http-interceptors';
 
 export interface AppState {
-  teachersFeatur: TeachersFeatureState;
+  teachersFeature: TeachersFeatureState;
 }
 
 @NgModule({
