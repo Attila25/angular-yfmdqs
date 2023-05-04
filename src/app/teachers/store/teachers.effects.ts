@@ -27,33 +27,6 @@ export class TeacherEffects {
     )
   );
 
-  createTeacher$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(TeacherActionTypes.teacherCreate),
-      concatLatestFrom((action) => this.store.select(selectNextTeacherId)),
-      switchMap(([action, id]) => {
-        console.log(action, id);
-        return this.teachersService.createTeacher(action).pipe(
-          map((item: any) => {
-            return teacherCreatedAction({
-              teacher: {
-                id,
-                neptun: action.neptun,
-                name: action.name,
-                email: action.email,
-                position: action.position,
-                subjectId: action.subjectId,
-                subjects: [],
-                deleted: false,
-              },
-            });
-          }),
-          catchError(() => EMPTY)
-        );
-      })
-    )
-  );
-
   constructor(
     private actions$: Actions,
     private teachersService: TeachersService,
